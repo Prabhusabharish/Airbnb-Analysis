@@ -8,15 +8,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from PIL import Image
-import streamlit as st
-import geopandas as gpd
-from jinja2 import Template
-import plotly.express as px
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from folium.plugins import MarkerCluster
-from streamlit_folium import folium_static
-from streamlit_option_menu import option_menu
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
