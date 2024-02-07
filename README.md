@@ -9,17 +9,21 @@ Airbnb Analysis is a data-driven project that explores various facets of Airbnb 
 
 Explore price variations based on different factors like property type, room type, and host response time.
 Visualize data through interactive bar charts and pie charts.
+
 ✔ **Availability Analysis**
 
 Analyze availability trends over different durations (30, 60, 90, and 365 days).
 Utilize sunburst charts to represent availability patterns.
+
 ✔ **Location Analysis**
 
 Investigate pricing trends based on host neighbourhood, host location, and room type.
 Visualize correlation matrices, bar charts, and geospatial distribution.
+
 ✔ **Geospatial Visualization**
 
 Present geospatial distribution of listings using a scatter map with price and accommodation size as key indicators.
+
 ✔ **Top Listings Analysis**
 
 Explore price analysis for top listings based on room type.
