@@ -1,28 +1,12 @@
-import re
 import ast
-import json
-import nltk
-import folium
-import pymongo
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from PIL import Image
 import streamlit as st
-import geopandas as gpd
-from jinja2 import Template
 import plotly.express as px
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from folium.plugins import MarkerCluster
-from streamlit_folium import folium_static
 from streamlit_option_menu import option_menu
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
-from nltk.sentiment import SentimentIntensityAnalyzer
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
 
 # - - - - - - - - - - - - - - -set st addbar page - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -316,20 +300,16 @@ elif SELECT == "Data Exploration":
         df_val_sel_rt_location = df_val_sel_location[df_val_sel_location["room_type"] == room_type_location]
 
         if 'host_neighbourhood' in df_val_sel_location.columns:
-            # Perform groupby operation
             df_grouped = df_val_sel_location.groupby(["street", "host_location", "host_neighbourhood"]).agg({'market': 'sum'}).reset_index()
 
-            # Display the grouped DataFrame for debugging
             st.dataframe(df_grouped)
 
-            # Create the bar chart
             fig_2_location = px.bar(df_grouped, x="host_neighbourhood", y="market",
                                     title="MARKET",
                                     hover_data=["street", "host_location", "host_neighbourhood", "market"],
                                     barmode='group', orientation='h',
                                     color_discrete_sequence=px.colors.sequential.Rainbow_r, width=1000)
 
-            # Display the bar chart
             st.plotly_chart(fig_2_location)
         else:
             st.warning("")
@@ -345,7 +325,6 @@ elif SELECT == "Data Exploration":
     with tab4:
         st.title("GEOSPATIAL VISUALIZATION")
 
-        # st.title("GEOSPATIAL VISUALIZATION")
         st.write("")
 
         fig = px.scatter_mapbox(df, lat='latitude', lon='longitude', color='price', size='accommodates',
@@ -439,6 +418,5 @@ elif SELECT == "About":
     st.subheader(Name)
     st.subheader(mail)
 
-    # Display GitHub and LinkedIn as clickable links
     st.markdown(github, unsafe_allow_html=True)
     st.markdown(linkedin, unsafe_allow_html=True)
