@@ -5,6 +5,7 @@ This project focuses on analyzing Airbnb data to derive insights into pricing tr
 Airbnb Analysis is a data-driven project that explores various facets of Airbnb listings, including pricing differences, availability patterns, location-based insights, and more. The project is implemented using Python, Streamlit, and Plotly for interactive and visually appealing visualizations.
 
 **Features**
+
 ✔ **Price Difference Analysis**
 
 Explore price variations based on different factors like property type, room type, and host response time.
